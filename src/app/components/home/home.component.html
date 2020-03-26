@@ -1,0 +1,32 @@
+<h1>Bienvenue dans la page d'acceuil dental gouré</h1>
+<mat-sidenav-container [ngClass]="['content-container']">
+  <mat-sidenav #sidenav mode="over" autosize>
+    <div class="menu-container">
+      <div class="menu-close">
+        <mat-icon class="item-icon-close" (click)="sidenav.close()"
+        >close</mat-icon
+        >
+        <span class="item-text-close">Menu</span>
+      </div>
+      <div class="menu-content">
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+      </div>
+      <div class="menu-footer">
+        <button
+          class="btn-deconnexion"
+          [attr.color]="'primary'"
+          (click)="sidenav.close()"
+        >
+        </button>
+      </div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div id="router-content" class="router-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+

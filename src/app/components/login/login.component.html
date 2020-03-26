@@ -1,0 +1,49 @@
+
+
+<div class="example-container">
+  <div [ngClass]="['login-left']" class="title">
+    <div class="centermethefuckup">
+      <div>
+      </div>
+    </div>
+  </div>
+  <div class="example-loading-shade"
+       *ngIf="isLoginFailed">
+    <mat-spinner *ngIf="isLoginFailed"></mat-spinner>
+  </div>
+  <div class = "login-rigth">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+      <h1 class = "title">Authentification</h1>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Identifiant</mat-label>
+          <input matInput type="text" placeholder="Identifiant" formControlName="username"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched">Entrez un identifiant valid </span>
+          </mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Mot de pass</mat-label>
+          <input matInput type="password" placeholder="Mot de pass" formControlName="password"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Entrez votre mot de passe</span>
+          </mat-error>
+        </mat-form-field>
+      </p>
+      <div class = "buttons-rows">
+        <div class="button-row">
+          <button calss = "btn-login"type="submit" [disabled]="!loginForm.valid" mat-flat-button >Connexion</button>
+        </div>
+        <div class="button-row">
+          <button calss = "btn-register" type="button" mat-flat-button (click)="register()">Inscription</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,77 @@
+.example-container {
+  flex-flow: row;
+  flex: 1;
+  display: flex;
+  height: -webkit-fill-available;
+  height: 90vh;
+  text-align: center;
+  .login-left {
+    width: 80%;
+    background-image: url('/assets/images/login-background.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: cover;
+    background-size: 80% 100% ;
+    background-position: center;
+    .centermethefuckup {
+      width: 100%;
+      margin-top: 20%;
+      text-align: center;
+    }
+  }
+  .login-rigth {
+    min-width: 300px;
+    flex: 1;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f9f9f9;
+
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+      top: 20%;
+      background-color: #f9f9f9;
+
+      ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+        color: #FFFF00;
+        opacity: 0.3;
+      }
+
+      ::ng-deep
+      .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+      .mat-form-field-label {
+        color: dimgrey;
+      }
+
+      .title {
+        top: 20%;
+        color: #4e9f29;
+      }
+
+      .buttons-rows {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .btn-register {
+          background-color: #228b22 !important;
+        }
+      }
+
+      .example-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+      }
+    }
+  }
+
+}
+
+
+
